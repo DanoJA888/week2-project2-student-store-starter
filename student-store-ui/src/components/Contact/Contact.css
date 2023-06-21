@@ -1,0 +1,16 @@
+.contact{
+    background: #2c4047;
+    display: flex;
+    max-width: 1100px;
+    margin: 0 146.5px;
+    display: flex;
+}
+.contact h1{
+    color: #fff;
+}
+.contact p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    
+}

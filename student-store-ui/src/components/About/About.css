@@ -2,4 +2,22 @@
     max-width: 1100px;
     margin: 0 146.5px;
     background-color: #00c385;
+    display: flex;
+    justify-content: flex-start;
+}
+.about p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-right: 35%;
+}
+.about h1{
+    color: #fff;
+}
+.about .image{
+    background: #2c4047;
+    display: flex;
+    justify-content: left;
+    
 }

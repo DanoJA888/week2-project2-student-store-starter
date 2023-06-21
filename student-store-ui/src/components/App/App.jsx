@@ -4,6 +4,8 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import About from "../About/About"
+import Contact from "../Contact/Contact"
+import Footer from "../Footer/Footer"
 import "./App.css"
 
 export default function App() {
@@ -16,6 +18,8 @@ export default function App() {
           <Sidebar />
           <Home />
           <About />
+          <Contact />
+          <Footer />
         </main>
       </BrowserRouter>
     </div>
