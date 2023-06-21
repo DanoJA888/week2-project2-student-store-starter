@@ -8,11 +8,14 @@ export default function ProductGrid({products, handleAddItemToCart, handleRemove
     console.log(productsOnSale)
     return (
         <div className="product-grid">
-            {
-                productsOnSale.map((product) =>(
-                    <ProductCard key={product.name} product={product} productId={product.id}/> 
-                    
-                
-            ))}
+            <h3 className="product-grid-heading">Best Selling Products</h3>
+            <div className="product-grid-cards">
+                {
+                    productsOnSale.map((product) =>(
+                        <div className="product-grid-item">
+                            <ProductCard key={product.name} product={product} productId={product.id}/>
+                        </div>     
+                ))}
+            </div>
         </div>
     )}
