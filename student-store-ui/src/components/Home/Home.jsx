@@ -1,11 +1,11 @@
 import * as React from "react"
 import "./Home.css"
+import Hero from "../Hero/Hero"
 
 export default function Home() {
   return (
     <div className="home">
-      <h1>Welcome to Student Store!</h1>
-      <p>Home</p>
+      <Hero />
     </div>
   )
 }
