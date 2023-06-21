@@ -1,18 +1,23 @@
 import * as React from "react"
 import "./ProductCard.css"
 
-
+/*
 export function ProductCard({product, productId}) {
-    console.log(product.image);
+    
     return (
-    <div className="card bg-white rounded-lg shadow-md" >
+    <div className="product-card">
         <img 
-            className="product-card-image" 
-            src={product.image} alt={product.name} 
-            style={{ height: "200px", objectFit: "cover" }}
+            src={product.image} 
+            alt={product.name} 
+            className="product-card-image"
         />
+        <div>
+            <h4 className="product-card-font">{product.name}</h4>
+            <p className="product-card-font">${product.price.toFixed(2)}</p>
+        </div>
     </div>
   )
 };
 
-export default ProductCard
+export default ProductCard;
+ */

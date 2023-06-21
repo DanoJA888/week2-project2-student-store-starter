@@ -1,0 +1,11 @@
+.product-card{
+    background-color: #00c385;
+}
+.product-card-font{
+    color: white;
+    font-style:italic;
+}
+.product-card-image{
+    max-height: "100%";
+    object-fit: "fill"; 
+}
