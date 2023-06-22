@@ -6,7 +6,8 @@ import { BsMeta } from "react-icons/bs";
 
 export default function Navbar() {
   return (
-    <nav className="navbar-content">
+    <nav className="navbar">
+      <div className="navbar-content">
         <Logo/>
         <div className="navbar-icons">
           <span><BsInstagram /></span>
@@ -18,6 +19,7 @@ export default function Navbar() {
           <span>About Us</span> 
           <span>Contact Us</span>
           <span>Buy Now</span>
+        </div>
         </div>
     </nav>
   )
