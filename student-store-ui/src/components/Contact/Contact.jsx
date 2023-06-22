@@ -5,10 +5,10 @@ import Logo from "../Logo/Logo"
 export default function Contact(){
     return(
     <div className="contact">
-        <div>
+        
+        <div className="contact-content">
             <h1>Contact Us</h1>
-        </div>
-        <div>
+        
             <p>
                 Email: code@path.org
             </p>

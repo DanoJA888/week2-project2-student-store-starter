@@ -9,30 +9,16 @@ import Footer from "../Footer/Footer"
 import "./App.css"
 
 export default function App() {
-  const [products, setProducts] = useState([]);
-  useEffect(() =>{
-    const apiCall = async () =>{
-      try{
-        const response = await fetch(`https://codepath-store-api.herokuapp.com/store`);
-        const data = await response.json();
-        console.log(data.products);
-        setProducts(data.products);
-      }
-      catch{
-        console.log("fetching went wrong")
-      }
-    };
-    apiCall();
-  }, []);
-  console.log(products)
+  
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
-          <Home products={products}/>
+          
+          <Home />
           <About />
           <Contact />
           <Footer />

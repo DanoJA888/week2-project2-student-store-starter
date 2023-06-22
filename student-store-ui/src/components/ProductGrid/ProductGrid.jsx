@@ -21,18 +21,26 @@ export default function ProductGrid({products, handleAddItemToCart, handleRemove
     )}
 
 */
-export default function ProductGrid({products}){
-    
+export default function ProductGrid({products, category}){
+    const renderedProducts = category === "All Categories" ? products : products.filter(product => product.category === category);
     return(
         <div className="product-grid">
             <h3 className="product-grid-heading">Best Selling Products</h3>
             <div className="product-grid-cards">
                 {
-                    products.map((product) =>(
+                    /*
+                    category === "All Categories" && products.map((product) =>(
                         <div className="product-grid-item">
                             <ProductCard key={product.name} product={product} productId={product.id}/>
                         </div>     
-                ))}
+                    ))
+                    */
+                   renderedProducts.map((product) => (
+                        <div className="product-grid-item">
+                            <ProductCard key={product.name} product={product} productId={product.id}/>
+                        </div>     
+                   ))
+                }
             </div>
         </div>
     )
