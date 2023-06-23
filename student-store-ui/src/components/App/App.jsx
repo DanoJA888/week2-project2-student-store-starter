@@ -16,8 +16,8 @@ export default function App() {
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
+          <Sidebar/>
           <Navbar />
-          
           <Home />
           <About />
           <Contact />
