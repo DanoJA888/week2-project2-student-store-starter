@@ -9,6 +9,8 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [currCategory, setCategory] = useState("All Categories");
+  const [currSearchTerm, setSearchTerm] = useState("");
+
   useEffect(() =>{
     const apiCall = async () =>{
         const response = await fetch(`https://codepath-store-api.herokuapp.com/store`);
@@ -22,8 +24,8 @@ export default function Home() {
     return (
     <div className="home">
         <Hero />
-        <Search filtering = {setCategory}/>
-        <ProductGrid products={products} category = {currCategory}/>
+        <Search filtering = {setCategory} currentSearch={currSearchTerm} setSearch={setSearchTerm}/>
+        <ProductGrid products={products} category = {currCategory} search = {currSearchTerm}/>
     </div>
   )
 }

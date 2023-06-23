@@ -21,8 +21,9 @@ export default function ProductGrid({products, handleAddItemToCart, handleRemove
     )}
 
 */
-export default function ProductGrid({products, category}){
+export default function ProductGrid({products, category, search}){
     const renderedProducts = category === "All Categories" ? products : products.filter(product => product.category === category);
+    const finalRenderedProducts = search === "" ? renderedProducts : renderedProducts.filter(product => product.name.toLowerCase().includes(search.toLowerCase()));
     return(
         <div className="product-grid">
             <h3 className="product-grid-heading">Best Selling Products</h3>
@@ -35,7 +36,7 @@ export default function ProductGrid({products, category}){
                         </div>     
                     ))
                     */
-                   renderedProducts.map((product) => (
+                    finalRenderedProducts.map((product) => (
                         <div className="product-grid-item">
                             <ProductCard key={product.name} product={product} productId={product.id}/>
                         </div>     
