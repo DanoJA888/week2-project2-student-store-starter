@@ -24,15 +24,23 @@ export function ProductCard({product, productId}) {
 export default ProductCard;
  */
 
-export function ProductCard({product, productId}){
+export function ProductCard({product, currentCart, updateCart, productId}){
     const [totalProduct, setTotal] = useState(0);
-
+    
     function addItem(){
         setTotal(totalProduct + 1);
+        if (currentCart[productId] === undefined) {
+            currentCart[productId] = 1;
+        } else {
+            currentCart[productId] = currentCart[productId] + 1;
+        }
     }
     function subtractTotal(){
         if (totalProduct > 0) {
             setTotal(totalProduct -1);
+        }
+        if (currentCart[productId] !== undefined){
+            currentCart[productId] = currentCart[productId] - 1;
         }
     }
     return(

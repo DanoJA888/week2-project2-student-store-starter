@@ -5,11 +5,11 @@ import Search from "../Search/Search"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import ProductGrid from "../ProductGrid/ProductGrid"
 
-export default function Home() {
+export default function Home({currentCart, updateCart}) {
   const [products, setProducts] = useState([]);
   const [currCategory, setCategory] = useState("All Categories");
   const [currSearchTerm, setSearchTerm] = useState("");
-  const [currID, setID] = useState("");
+  
 
   useEffect(() =>{
     const apiCall = async () =>{
@@ -25,7 +25,7 @@ export default function Home() {
     <div className="home">
         <Hero />
         <Search filtering = {setCategory} currentSearch={currSearchTerm} setSearch={setSearchTerm}/>
-        <ProductGrid products={products} category = {currCategory} search = {currSearchTerm}/>
+        <ProductGrid products={products} category = {currCategory} search = {currSearchTerm} currentCart = {currentCart} updateCart = {updateCart}/>
     </div>
   )
 }

@@ -10,17 +10,17 @@ import "./App.css"
 import ProductDetail from "../ProductDetail/ProductDetail"
 
 export default function App() {
-  
-
+  const [shoppingCart, setShoppingCart] = useState({});
+  console.log({shoppingCart})
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Sidebar/>
+          <Sidebar cart={shoppingCart}/>
           <Navbar />
           <Routes>
-            <Route path = "/" element={<Home />}></Route>
+            <Route path = "/" element={<Home currentCart = {shoppingCart} updateCart={setShoppingCart}/>}></Route>
             <Route path = "/product/:id" element={<ProductDetail />}></Route>
           </Routes>
           <About />

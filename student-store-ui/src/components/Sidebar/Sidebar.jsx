@@ -13,6 +13,9 @@ export default function Sidebar() {
         <button className = "button" onClick={() => handleExpandSideBar()}>
           Expand
         </button>
+        {currExpand &&
+          <p>hi</p>
+        }
       </div>
     </div>
 

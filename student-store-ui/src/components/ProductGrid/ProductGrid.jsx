@@ -22,7 +22,7 @@ export default function ProductGrid({products, handleAddItemToCart, handleRemove
     )}
 
 */
-export default function ProductGrid({products, category, search}){
+export default function ProductGrid({products, category, search, currentCart, updateCart}){
     const renderedProducts = category === "All Categories" ? products : products.filter(product => product.category === category);
     const finalRenderedProducts = search === "" ? renderedProducts : renderedProducts.filter(product => product.name.toLowerCase().includes(search.toLowerCase()));
     return(
@@ -40,7 +40,7 @@ export default function ProductGrid({products, category, search}){
                     finalRenderedProducts.map((product) => (
                         <div className="product-grid-item">
                             
-                                <ProductCard key={product.name} product={product} productId={product.id}/>
+                                <ProductCard key={product.name} product={product} productId={product.id} currentCart = {currentCart} updateCart={updateCart}/>
                             
                         </div>     
                    ))
