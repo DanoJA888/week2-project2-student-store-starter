@@ -2,14 +2,14 @@ import React , { useEffect, useState } from "react"
 import "./Home.css"
 import Hero from "../Hero/Hero"
 import Search from "../Search/Search"
-
-//import ProductCard from "../ProductCard/ProductCard"
+import ProductDetail from "../ProductDetail/ProductDetail"
 import ProductGrid from "../ProductGrid/ProductGrid"
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [currCategory, setCategory] = useState("All Categories");
   const [currSearchTerm, setSearchTerm] = useState("");
+  const [currID, setID] = useState("");
 
   useEffect(() =>{
     const apiCall = async () =>{

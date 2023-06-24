@@ -2,6 +2,7 @@ import * as React from "react"
 import "./ProductGrid.css"
 import dataSet from "../../../../student-store-express-api/data/db.json"
 import ProductCard from "../ProductCard/ProductCard"
+
 /* 
 const productsOnSale = dataSet.products
 export default function ProductGrid({products, handleAddItemToCart, handleRemoveItemToCart}) {
@@ -38,7 +39,9 @@ export default function ProductGrid({products, category, search}){
                     */
                     finalRenderedProducts.map((product) => (
                         <div className="product-grid-item">
-                            <ProductCard key={product.name} product={product} productId={product.id}/>
+                            
+                                <ProductCard key={product.name} product={product} productId={product.id}/>
+                            
                         </div>     
                    ))
                 }
