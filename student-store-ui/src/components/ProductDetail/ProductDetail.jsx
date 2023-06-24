@@ -28,7 +28,7 @@ export default function ProductDetail(){
                 </div>
                 <div className="product-info">
                     <p>{product.description}</p>
-                    <p>${product.price.toFixed(2)}</p>
+                    <p>${product.price}</p>
                 </div>
             </div>
         </div>
