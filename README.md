@@ -23,8 +23,8 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 ### Stretch Features
 
 - [X] Users can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
+- [X] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
@@ -44,3 +44,21 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+
+
+### Reflection
+
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+I think the topics discussed in class vaguely were applied to what we needed for this weeks project, however, Tim's recorded videos on Searching in react as well as Routing definitely aided in the processs
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+If I had more time I would have added more visually appealing styling to items such as the side bar, as well as when you add and remove items from the shopping cart, it ended up adding space to the card which looked abit odd, but I had no time. I would have also liked to finish the final stretch goal, however, I proud of getting 3 stretch goals functioning this week.
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+Demoing with Miguel definitely gave me an opportunity to practice explaining my technical processes on an "out-loud" communication level. 
+
+### Demo
+
+<a href="https://www.loom.com/share/7ab3d7a83173423285c84388276e7a73">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7ab3d7a83173423285c84388276e7a73-with-play.gif">
+  </a>

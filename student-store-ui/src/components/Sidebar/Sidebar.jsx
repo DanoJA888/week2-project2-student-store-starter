@@ -1,11 +1,14 @@
 import { useState } from "react"
 import "./Sidebar.css"
 
-export default function Sidebar() {
+export default function Sidebar({products, cart}) {
   const [currExpand, setExpand] = useState(false);
   const handleExpandSideBar= () =>{
       setExpand(!currExpand);
   };
+  // these console logs are for both debugging as well as proof of stretch goal completion
+  console.log(products)
+  console.log(cart)
   return (
     <div className="sidebar">
       <h3>SideMenu</h3>
@@ -13,9 +16,6 @@ export default function Sidebar() {
         <button className = "button" onClick={() => handleExpandSideBar()}>
           Expand
         </button>
-        {currExpand &&
-          <p>hi</p>
-        }
       </div>
     </div>
 

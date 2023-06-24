@@ -10,17 +10,29 @@ import "./App.css"
 import ProductDetail from "../ProductDetail/ProductDetail"
 
 export default function App() {
+  const [products, setProducts] = useState([]);
   const [shoppingCart, setShoppingCart] = useState({});
   console.log({shoppingCart})
+
+  useEffect(() =>{
+    const apiCall = async () =>{
+        const response = await fetch(`https://codepath-store-api.herokuapp.com/store`);
+        const data = await response.json();
+        console.log(data.products);
+        setProducts(data.products);
+    };
+    apiCall();
+  }, []);
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Sidebar cart={shoppingCart}/>
+          <Sidebar products ={products} cart={shoppingCart}/>
           <Navbar />
           <Routes>
-            <Route path = "/" element={<Home currentCart = {shoppingCart} updateCart={setShoppingCart}/>}></Route>
+            <Route path = "/" element={<Home products = {products} currentCart = {shoppingCart} updateCart={setShoppingCart}/>}></Route>
             <Route path = "/product/:id" element={<ProductDetail />}></Route>
           </Routes>
           <About />
