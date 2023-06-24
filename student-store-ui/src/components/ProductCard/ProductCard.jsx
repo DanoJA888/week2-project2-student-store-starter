@@ -1,6 +1,7 @@
 import * as React from "react"
 import "./ProductCard.css"
 import { Link } from "react-router-dom"
+import {useState} from "react"
 
 /*
 export function ProductCard({product, productId}) {
@@ -24,7 +25,16 @@ export default ProductCard;
  */
 
 export function ProductCard({product, productId}){
-    
+    const [totalProduct, setTotal] = useState(0);
+
+    function addItem(){
+        setTotal(totalProduct + 1);
+    }
+    function subtractTotal(){
+        if (totalProduct > 0) {
+            setTotal(totalProduct -1);
+        }
+    }
     return(
         <div className="product-card">
             <Link to={`/product/${product.id}`}>
@@ -37,6 +47,13 @@ export function ProductCard({product, productId}){
             <div className="product-card-font">
                 <h4>{product.name}</h4>
                 <p>${product.price.toFixed(2)}</p>
+            </div>
+            <div>
+                <button id="addToCart" onClick={() => addItem()}>+</button>
+                <button id="addToCart" onClick={() => subtractTotal()}>-</button>
+                {totalProduct > 0 &&
+                    <p>{totalProduct}</p>
+                }
             </div>
         </div>
     )
