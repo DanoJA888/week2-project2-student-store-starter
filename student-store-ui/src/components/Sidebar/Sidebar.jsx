@@ -16,6 +16,26 @@ export default function Sidebar({products, cart}) {
         <button className = "button" onClick={() => handleExpandSideBar()}>
           Expand
         </button>
+        <div>
+          {currExpand &&
+          <table>
+            <tr>
+              <td>Product Name</td>
+              <td>Product Price</td>
+              <td>Product Quantity</td>
+              <td>Product Total</td>
+            </tr>
+            {Object.entries(cart).map(([key, value]) => (
+              <tr>
+                <td>{products[key-1].name}</td>
+                <td>${products[key-1].price}</td>
+                <td>{value}</td>
+                <td>${products[key-1].price * value}</td>
+              </tr>
+            ))}
+          </table>
+          }
+        </div>
       </div>
     </div>
 
