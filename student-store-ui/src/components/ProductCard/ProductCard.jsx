@@ -38,10 +38,12 @@ export function ProductCard({product, currentCart, updateCart, productId}){
     function subtractTotal(){
         if (totalProduct > 0) {
             setTotal(totalProduct -1);
-        }
-        if (currentCart[productId] !== undefined){
             currentCart[productId] = currentCart[productId] - 1;
+            if (currentCart[productId] == 0){
+                delete currentCart[product.id];
+            }
         }
+        
     }
     return(
         <div className="product-card">
