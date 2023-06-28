@@ -26,23 +26,26 @@ export default ProductCard;
 
 export function ProductCard({product, currentCart, updateCart, productId}){
     const [totalProduct, setTotal] = useState(0);
+    const newCart = {...currentCart};
     
     function addItem(){
         setTotal(totalProduct + 1);
-        if (currentCart[productId] === undefined) {
-            currentCart[productId] = 1;
+        if (newCart[productId] === undefined) {
+            newCart[productId] = 1;
         } else {
-            currentCart[productId] = currentCart[productId] + 1;
+            newCart[productId] += 1;
         }
+        updateCart(newCart);
     }
     function subtractTotal(){
         if (totalProduct > 0) {
             setTotal(totalProduct -1);
-            currentCart[productId] = currentCart[productId] - 1;
-            if (currentCart[productId] == 0){
-                delete currentCart[product.id];
+            newCart[productId] -= 1;
+            if (newCart[productId] == 0){
+                delete newCart[product.id];
             }
         }
+        updateCart(newCart);
         
     }
     return(
