@@ -3,6 +3,7 @@ import "./Sidebar.css"
 
 export default function Sidebar({products, cart, subTotal}) {
   const [currExpand, setExpand] = useState(false);
+  const tax = 0.12;
   const handleExpandSideBar= () =>{
       setExpand(!currExpand);
   };
@@ -39,7 +40,14 @@ export default function Sidebar({products, cart, subTotal}) {
           </table>
           }
           {currExpand && subTotal > 0 &&
-            <p>{subTotal}</p>
+            <div>
+              <div>
+                <p>Subtotal: {subTotal}</p>
+                <p>Tax: {(tax * subTotal).toFixed(2)}</p>
+                <p>Total: {((subTotal) + (tax * subTotal)).toFixed(2)}</p>
+              </div>
+              
+            </div>
           }
         </div>
       </div>
