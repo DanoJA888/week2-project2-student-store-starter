@@ -24,7 +24,7 @@ export function ProductCard({product, productId}) {
 export default ProductCard;
  */
 
-export function ProductCard({product, currentCart, updateCart, productId}){
+export function ProductCard({product, currentCart, updateCart, productId, currentSubTotal, updateSubTotal}){
     const [totalProduct, setTotal] = useState(0);
     const newCart = {...currentCart};
     
@@ -36,6 +36,7 @@ export function ProductCard({product, currentCart, updateCart, productId}){
             newCart[productId] += 1;
         }
         updateCart(newCart);
+        updateSubTotal(currentSubTotal + product.price)
     }
     function subtractTotal(){
         if (totalProduct > 0) {
@@ -44,9 +45,11 @@ export function ProductCard({product, currentCart, updateCart, productId}){
             if (newCart[productId] == 0){
                 delete newCart[product.id];
             }
+            updateSubTotal(currentSubTotal - product.price)
         }
         updateCart(newCart);
         
+
     }
     return(
         <div className="product-card">

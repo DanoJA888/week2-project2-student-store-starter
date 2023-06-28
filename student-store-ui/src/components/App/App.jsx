@@ -12,6 +12,7 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 export default function App() {
   const [products, setProducts] = useState([]);
   const [shoppingCart, setShoppingCart] = useState({});
+  const [currentSubTot, setSubTot] = useState(0.00);
   console.log({shoppingCart})
 
   useEffect(() =>{
@@ -29,10 +30,10 @@ export default function App() {
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Sidebar products ={products} cart={shoppingCart}/>
+          <Sidebar products ={products} cart={shoppingCart} subTotal = {currentSubTot}/>
           <Navbar />
           <Routes>
-            <Route path = "/" element={<Home products = {products} currentCart = {shoppingCart} updateCart={setShoppingCart}/>}></Route>
+            <Route path = "/" element={<Home products = {products} currentCart = {shoppingCart} updateCart={setShoppingCart} currentSubTotal = {currentSubTot} updateSubTotal = {setSubTot}/> }></Route>
             <Route path = "/product/:id" element={<ProductDetail />}></Route>
           </Routes>
           <About />

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./Sidebar.css"
 
-export default function Sidebar({products, cart}) {
+export default function Sidebar({products, cart, subTotal}) {
   const [currExpand, setExpand] = useState(false);
   const handleExpandSideBar= () =>{
       setExpand(!currExpand);
@@ -27,6 +27,7 @@ export default function Sidebar({products, cart}) {
                 <td>Product Total</td>
               </tr>
               {Object.entries(cart).map(([key, value]) => (
+                
                 <tr>
                   <td>{products[key-1].name}</td>
                   <td>${products[key-1].price}</td>
@@ -36,6 +37,9 @@ export default function Sidebar({products, cart}) {
               ))}
             </tbody>
           </table>
+          }
+          {currExpand && subTotal > 0 &&
+            <p>{subTotal}</p>
           }
         </div>
       </div>
