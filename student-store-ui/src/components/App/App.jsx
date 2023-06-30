@@ -37,7 +37,7 @@ export default function App() {
             <Route path = "/" element={<Home products = {products} currentCart = {shoppingCart} updateCart={setShoppingCart} currentSubTotal = {currentSubTot} updateSubTotal = {setSubTot} 
             checkoutStatus = {checkoutStatus}/> }></Route>
 
-            <Route path = "/product/:id" element={<ProductDetail />}></Route>
+            <Route path = "/store/:productId" element={<ProductDetail />}></Route>
           </Routes>
           <About />
           <Contact />

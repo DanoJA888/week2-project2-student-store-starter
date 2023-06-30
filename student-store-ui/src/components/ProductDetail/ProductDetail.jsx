@@ -4,12 +4,12 @@ import "./ProductDetail.css"
 
 
 export default function ProductDetail(){
-    const { id } = useParams();
+    const { productId } = useParams();
     const [product, setProduct] = useState("");
 
     useEffect(() =>{
         const apiCall = async () =>{
-            const response = await fetch(`https://codepath-store-api.herokuapp.com/store/${id}`);
+            const response = await fetch(`http://localhost:3001/store/${productId}`);
             const data = await response.json();
             console.log(data.product);
             setProduct(data.product);

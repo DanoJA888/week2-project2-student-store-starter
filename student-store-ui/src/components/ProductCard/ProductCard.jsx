@@ -57,7 +57,7 @@ export function ProductCard({product, currentCart, updateCart, productId, curren
 
     return(
         <div className="product-card">
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/store/${product.id}`}>
             <img 
                 src={product.image} 
                 alt={product.name}
