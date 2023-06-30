@@ -3,7 +3,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors')
 const app = express();
-const router = require('./routes/store')
+const storeRouter = require('./routes/store');
+const orderRouter = require('./routes/orders');
 app.use(morgan("tiny"));
 app.use(express.json());
 
@@ -15,7 +16,8 @@ app.get("/", async (req, res) =>{
     res.json({ping1:'pong'})
 })
 
-app.use('/store', router);
+app.use('/store', storeRouter);
+app.use('/orders', orderRouter);
 
 app.use((req, res, next) => {
     next(new NotFoundError('Not found'));
