@@ -24,9 +24,10 @@ export function ProductCard({product, productId}) {
 export default ProductCard;
  */
 
-export function ProductCard({product, currentCart, updateCart, productId, currentSubTotal, updateSubTotal}){
+export function ProductCard({product, currentCart, updateCart, productId, currentSubTotal, updateSubTotal, checkoutStatus}){
     const [totalProduct, setTotal] = useState(0);
     const newCart = {...currentCart};
+    
     
     function addItem(){
         setTotal(totalProduct + 1);
@@ -45,12 +46,15 @@ export function ProductCard({product, currentCart, updateCart, productId, curren
             if (newCart[productId] == 0){
                 delete newCart[product.id];
             }
-            updateSubTotal(currentSubTotal - product.price)
+            updateSubTotal(currentSubTotal - product.price);
+            updateCart(newCart);
         }
-        updateCart(newCart);
-        
+    if (!checkoutStatus){
+        setTotal(0);
+    }      
 
     }
+
     return(
         <div className="product-card">
             <Link to={`/product/${product.id}`}>
